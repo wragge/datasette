@@ -402,11 +402,11 @@ def make_dockerfile(
     apt_get_extras = apt_get_extras_
     if spatialite:
         apt_get_extras.extend(["python3-dev", "gcc", "libsqlite3-mod-spatialite"])
-        environment_variables["SQLITE_EXTENSIONS"] = (
-            "/usr/lib/x86_64-linux-gnu/mod_spatialite.so"
-        )
+        environment_variables[
+            "SQLITE_EXTENSIONS"
+        ] = "/usr/lib/x86_64-linux-gnu/mod_spatialite.so"
     return """
-FROM python:3.11.0-slim-bullseye
+FROM python:3.12.0-slim-bookworm
 COPY . /app
 WORKDIR /app
 {apt_get_extras}
