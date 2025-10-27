@@ -1,4 +1,4 @@
-FROM python:3.12.0-slim-bullworm as build
+FROM python:3.12.0-slim-bookworm as build
 
 # Version of Datasette to install, e.g. 0.55
 #   docker build . -t datasette --build-arg VERSION=0.55
